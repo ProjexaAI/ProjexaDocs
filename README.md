@@ -2,4 +2,4 @@
 
 ## Hacktoberfest 2025
 This repository is participating in Hacktoberfest.  
-Contributions to documentation and improvements are welcome.  
+Contributions to documentation and improvements are welcome.   

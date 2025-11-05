@@ -16,3 +16,9 @@
     background-color: #999 !important; /* Tint of #186444 */
     color: #FFF !important;
 }
+
+.md-nav__title,
+.md-nav__item--section > .md-nav__link,
+.md-header .md-header-nav__link {
+  color: #000 !important;
+}

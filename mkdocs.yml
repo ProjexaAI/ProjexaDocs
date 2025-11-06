@@ -40,3 +40,10 @@ nav:
       - Team Evaluation: team-evaluation.md
   - Mentor:
       - Handling Interactions: handling-interactions.md
+  - Admin:
+      - Session Management: admin/admin-session-management.md
+      - Problem Statements: admin/admin-problem-statements.md
+      - Interactions: admin/admin-intraction-monitor.md
+      - Projects: admin/admin-projects.md
+      - Faculty Overview: admin/admin-faculty.md
+      - Team Overview: admin/admin-teams.md

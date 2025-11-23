@@ -47,3 +47,7 @@ nav:
       - Projects: admin/admin-projects.md
       - Faculty Overview: admin/admin-faculty.md
       - Team Overview: admin/admin-teams.md
+  - Coordinator:
+      - Coordinator Guide: coordinator/coordinator.md
+      - Dashboard Overview: coordinator/dashboard.md
+      - Students: coordinator/students.md

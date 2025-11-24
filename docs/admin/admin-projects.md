@@ -17,12 +17,15 @@ Effective project management is crucial for:
 - **Progress Tracking**: Structured completion processes provide clear project status
 
 ### Core Components
-
 #### 1. Categories Management
 Create and manage custom project categories with specific completion requirements
 
+![Projects overview](../assets/images/admin-projects/image.png)
+
 #### 2. Project Completion Forms
 Design standardized forms that teams must complete when finishing their projects
+
+![Projects overview](../assets/images/admin-projects/image-2.png)
 
 ## Categories Management
 

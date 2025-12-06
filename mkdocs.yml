@@ -1,31 +1,159 @@
-site_name: Projexa LMS Docs
+site_name: Projexa AI Docs
 site_url: https://docs.projexa.ai
+site_description: Comprehensive documentation for Projexa AI - Learn how to use our platform effectively
+site_author: Projexa AI Team
+repo_url: https://github.com/ProjexaAI
+repo_name: ProjexaAI
+edit_uri: ""
+
 theme:
   favicon: assets/favicon.svg
   name: material
   logo: https://cdn.projexa.ai/projexa-logo.svg
   palette:
-    primary: "#186444"
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
   features:
+    # Navigation
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
     - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    # Search
     - search.highlight
     - search.suggest
+    - search.share
+    # Table of contents
+    - toc.follow
     - toc.integrate
+    # Content
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    # Header
+    - header.autohide
   language: en
   version:
     provider: mike
     selector: true
-copyright: "© 2025 Projexa LMS. All rights reserved."
+    
+copyright: "© 2025 Projexa AI. All rights reserved."
+
 extra:
   generator: false
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/ProjexaLMS
+      link: https://github.com/ProjexaAI
+      name: GitHub
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/projexa_ai/
+      name: Instagram
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/projexa-ai
+      name: LinkedIn
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@projexa-ai
+      name: YouTube
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/ProjexaAI
+      name: X (Twitter)
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+markdown_extensions:
+  # Python Markdown
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Anchor link to this section
+      toc_depth: 3
+  # Python Markdown Extensions
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+      lang: en
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
+      js_files:
+        - javascripts/extra.js
+      css_files:
+        - css/custom.css
+
 extra_css:
   - css/custom.css
+  
 extra_javascript:
-  - "https://insights.projexa.ai/js/script.file-downloads.hash.outbound-links.pageview-props.tagged-events.js"  # External Plausible Analytics script
-  - javascripts/extra.js  # Custom JavaScript file to initialize Plausible
+  - javascripts/extra.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 nav:
   - Introduction: index.md
   - How to Onboard:
@@ -34,10 +162,6 @@ nav:
       - Magic Link Authentication: how-to-onboard-magic.md
   - Idea Submission:
       - Submitting Ideas: idea-submission.md
-  - Team:
-      - Team Creation: team-management.md
-      - Team Interaction: team-interaction.md
-      - Team Evaluation: team-evaluation.md
   - Mentor:
       - Handling Interactions: handling-interactions.md
   - Admin:
@@ -51,3 +175,9 @@ nav:
       - Coordinator Guide: coordinator/coordinator.md
       - Dashboard Overview: coordinator/dashboard.md
       - Students: coordinator/students.md
+      - Video: video-embedding-example.md
+  - Student:
+      - Team Creation: student/how_to_create_a_team_in_projexa_ai.md
+      - Submitting Problem Statements: student/submitting_problem_statements.md
+      - Scheduling Interactions: student/scheduling_interactions.md
+      - Team Evaluation: student/team_evaluation.md

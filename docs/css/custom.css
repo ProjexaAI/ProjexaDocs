@@ -1,24 +1,376 @@
+/* ===========================
+   Custom Color Palette
+   =========================== */
+:root {
+  --projexa-primary: #186444;
+  --projexa-primary-light: #1f7d54;
+  --projexa-primary-dark: #124a33;
+  --projexa-accent: #2ecc71;
+  --projexa-gray: #999;
+  --projexa-text: #000;
+  --projexa-text-light: #666;
+}
+
+[data-md-color-scheme="slate"] {
+  --projexa-text: #fff;
+  --projexa-text-light: #ccc;
+  --md-primary-fg-color: #186444;
+  --md-accent-fg-color: #2ecc71;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #186444;
+  --md-accent-fg-color: #2ecc71;
+}
+
+/* Fix light mode visibility for theme toggle and GitHub repo count */
+[data-md-color-scheme="default"] .md-header__button {
+  color: #000 !important;
+}
+
+[data-md-color-scheme="default"] .md-header__source {
+  color: #000 !important;
+}
+
+[data-md-color-scheme="default"] .md-source__icon {
+  color: #000 !important;
+}
+
+[data-md-color-scheme="default"] .md-source__repository {
+  color: #000 !important;
+}
+
+[data-md-color-scheme="default"] .md-source__facts {
+  color: #000 !important;
+}
+
+/* ===========================
+   Header Styling
+   =========================== */
 .md-header {
   background-color: transparent !important;
   box-shadow: none !important;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.md-header--shadow {
+  box-shadow: 0 0 0.2rem rgba(0,0,0,.1), 0 0.2rem 0.4rem rgba(0,0,0,.2) !important;
 }
 
 .md-header__button.md-logo img {
   height: 48px !important;
   width: auto !important;
+  max-width: 200px;
+  object-fit: contain;
 }
 
 .md-header__topic {
   display: none !important;
 }
 
+/* ===========================
+   Search Styling
+   =========================== */
 .md-search__form {
-    background-color: #999 !important; /* Tint of #186444 */
-    color: #FFF !important;
+  background-color: var(--projexa-gray) !important;
+  color: #FFF !important;
+  border-radius: 0.2rem;
+  transition: background-color 0.2s ease;
 }
 
+.md-search__form:hover {
+  background-color: var(--projexa-primary-light) !important;
+}
+
+.md-search__input {
+  color: #FFF !important;
+}
+
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ===========================
+   Navigation Styling
+   =========================== */
 .md-nav__title,
 .md-nav__item--section > .md-nav__link,
 .md-header .md-header-nav__link {
-  color: #000 !important;
+  color: var(--projexa-text) !important;
+}
+
+.md-nav__link {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.md-nav__link:hover {
+  color: var(--projexa-primary) !important;
+}
+
+.md-nav__link--active {
+  color: var(--projexa-primary) !important;
+  font-weight: 600;
+}
+
+/* Tabs styling */
+.md-tabs {
+  background-color: var(--projexa-primary) !important;
+}
+
+.md-tabs__link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.md-tabs__link:hover {
+  color: #fff !important;
+  opacity: 1;
+}
+
+.md-tabs__link--active {
+  color: #fff !important;
+  opacity: 1;
+  font-weight: 600;
+}
+
+/* ===========================
+   Mobile & Responsive Design
+   =========================== */
+@media screen and (max-width: 76.1875em) {
+  /* Mobile sidebar fixes */
+  .md-nav--primary .md-nav__title {
+    display: block !important;
+    background-color: var(--projexa-primary) !important;
+    color: #fff !important;
+  }
+  
+  .md-nav__toggle~.md-nav__list {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 5rem);
+    overflow-y: auto;
+  }
+  
+  /* Mobile hamburger menu */
+  .md-header__button.md-icon {
+    color: var(--projexa-primary) !important;
+  }
+  
+  /* Better mobile navigation */
+  .md-nav--primary .md-nav__item {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .md-nav--primary .md-nav__link {
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media screen and (max-width: 60em) {
+  .md-header__button.md-logo img {
+    height: 36px !important;
+  }
+}
+
+/* ===========================
+   Content Enhancements
+   =========================== */
+/* Improved code blocks */
+.md-typeset code {
+  background-color: rgba(24, 100, 68, 0.05);
+  border-radius: 0.2rem;
+  padding: 0.1em 0.4em;
+}
+
+.md-typeset pre>code {
+  background-color: transparent;
+}
+
+/* Copy button styling */
+.md-clipboard {
+  color: var(--projexa-primary) !important;
+}
+
+.md-clipboard:hover {
+  color: var(--projexa-primary-light) !important;
+}
+
+/* ===========================
+   Admonitions
+   =========================== */
+.md-typeset .admonition {
+  border-radius: 0.3rem;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.05);
+}
+
+.md-typeset .admonition.note {
+  border-left: 0.4rem solid var(--projexa-primary);
+}
+
+/* ===========================
+   Tables
+   =========================== */
+.md-typeset table:not([class]) {
+  border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.05);
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--projexa-primary);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===========================
+   Video Containers
+   =========================== */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 1.5em 0;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.1);
+  background-color: #000;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0.5rem;
+}
+
+/* 4:3 aspect ratio */
+.video-container-4-3 {
+  padding-bottom: 75%;
+}
+
+/* 21:9 aspect ratio */
+.video-container-21-9 {
+  padding-bottom: 42.857%;
+}
+
+/* ===========================
+   Buttons & Links
+   =========================== */
+.md-typeset a {
+  color: var(--projexa-primary);
+  transition: color 0.2s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--projexa-primary-light);
+  text-decoration: underline;
+}
+
+/* Custom button styles */
+.md-button {
+  background-color: var(--projexa-primary) !important;
+  color: #fff !important;
+  border-radius: 0.3rem;
+  transition: all 0.2s ease;
+}
+
+.md-button:hover {
+  background-color: var(--projexa-primary-light) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0.4rem 0.8rem rgba(24, 100, 68, 0.2);
+}
+
+.md-button--primary {
+  background-color: var(--projexa-primary) !important;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+.md-footer {
+  background-color: var(--projexa-primary) !important;
+}
+
+.md-footer-meta {
+  background-color: var(--projexa-primary-dark) !important;
+}
+
+/* ===========================
+   Scrollbar Styling
+   =========================== */
+::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--projexa-primary);
+  border-radius: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--projexa-primary-light);
+}
+
+/* ===========================
+   Back to Top Button
+   =========================== */
+.md-top {
+  background-color: var(--projexa-primary) !important;
+  transition: all 0.2s ease;
+}
+
+.md-top:hover {
+  background-color: var(--projexa-primary-light) !important;
+  transform: scale(1.1);
+}
+
+/* ===========================
+   Loading Progress Bar
+   =========================== */
+.md-progress {
+  background-color: var(--projexa-primary) !important;
+}
+
+/* ===========================
+   Utility Classes
+   =========================== */
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.mt-1 { margin-top: 0.5rem !important; }
+.mt-2 { margin-top: 1rem !important; }
+.mt-3 { margin-top: 1.5rem !important; }
+
+.mb-1 { margin-bottom: 0.5rem !important; }
+.mb-2 { margin-bottom: 1rem !important; }
+.mb-3 { margin-bottom: 1.5rem !important; }
+
+/* ===========================
+   Print Styles
+   =========================== */
+@media print {
+  .md-header,
+  .md-tabs,
+  .md-footer,
+  .md-sidebar {
+    display: none !important;
+  }
+  
+  .md-content {
+    max-width: 100% !important;
+  }
 }
